@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { chatSession } from "@/utils/GeminiAIModel";
-import { LoaderCircle } from "lucide-react";
+import { LoaderCircle, Plus, BriefcaseBusiness } from "lucide-react";
 import { MockInterview } from "@/utils/schema";
 import { v4 as uuidv4 } from 'uuid';
 import { db } from "@/utils/db";
@@ -101,10 +101,13 @@ function AddNewInterview() {
   return (
     <div>
       <div
-        className="p-10 rounded-lg bg-secondary hover:scale-105 shadow-md cursor-pointer transition-all"
+        className="p-10 border-2 border-dashed border-gray-300 rounded-xl bg-gray-50 hover:bg-gray-100 hover:border-blue-500 hover:shadow-lg cursor-pointer transition-all duration-300 flex flex-col items-center justify-center gap-2 group"
         onClick={() => setOpenDialog(true)}
       >
-        <h2 className="text-lg text-center">+ Add New</h2>
+        <div className="bg-white p-3 rounded-full shadow-sm group-hover:scale-110 transition-transform duration-300">
+          <Plus className="w-8 h-8 text-blue-600" />
+        </div>
+        <h2 className="text-lg font-semibold text-gray-700 group-hover:text-blue-600 transition-colors">Add New Interview</h2>
       </div>
 
       <Dialog open={openDialog} onOpenChange={setOpenDialog}>

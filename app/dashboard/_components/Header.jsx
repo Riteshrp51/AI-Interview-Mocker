@@ -11,16 +11,16 @@ function Header() {
   const { user, logout } = useAuth();
 
   return (
-    <div className='flex items-center justify-between p-4 bg-secondary shadow-sm'>
+    <div className='flex items-center justify-between p-4 bg-white shadow-sm border-b'>
       {/* Logo on the left */}
       <Image src={'/logo.svg'} width={160} height={100} alt='logo' />
 
       {/* Centered Navigation Menu */}
-      <ul className='hidden md:flex flex-1 justify-center gap-6 px-6'>
+      <ul className='hidden md:flex flex-1 justify-center gap-8 px-6 text-sm font-medium'>
         <li>
           <Link
             href="/dashboard"
-            className={`hover:text-blue-500 hover:font-bold transition-all cursor-pointer ${path === '/dashboard' ? 'text-blue-500 font-bold' : ''}`}
+            className={`hover:text-blue-600 transition-colors cursor-pointer ${path === '/dashboard' ? 'text-blue-600 font-bold border-b-2 border-blue-600 pb-1' : 'text-gray-600'}`}
           >
             Dashboard
           </Link>
@@ -28,7 +28,7 @@ function Header() {
         <li>
           <Link
             href="/dashboard/questions"
-            className={`hover:text-blue-500 hover:font-bold transition-all cursor-pointer ${path === '/dashboard/questions' ? 'text-blue-500 font-bold' : ''}`}
+            className={`hover:text-blue-600 transition-colors cursor-pointer ${path === '/dashboard/questions' ? 'text-blue-600 font-bold border-b-2 border-blue-600 pb-1' : 'text-gray-600'}`}
           >
             Questions
           </Link>
@@ -37,7 +37,7 @@ function Header() {
         <li>
           <Link
             href="/how-it-works"
-            className={`hover:text-blue-500 hover:font-bold transition-all cursor-pointer ${path === '/how-it-works' ? 'text-blue-500 font-bold' : ''}`}
+            className={`hover:text-blue-600 transition-colors cursor-pointer ${path === '/how-it-works' ? 'text-blue-600 font-bold border-b-2 border-blue-600 pb-1' : 'text-gray-600'}`}
           >
             How It Works?
           </Link>
@@ -47,7 +47,7 @@ function Header() {
       {/* Auth controls on the right */}
       {user ? (
         <div className="flex items-center gap-3">
-          <span className="text-sm text-gray-700 hidden sm:inline">
+          <span className="text-sm font-medium text-gray-700 hidden sm:inline">
             {user.email}
           </span>
           <button
@@ -56,7 +56,7 @@ function Header() {
               logout();
               router.replace('/');
             }}
-            className="px-3 py-1 rounded-md border text-sm hover:bg-gray-100"
+            className="px-4 py-2 rounded-md border border-gray-300 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
           >
             Logout
           </button>
@@ -65,13 +65,13 @@ function Header() {
         <div className="flex items-center gap-3">
           <Link
             href="/sign-in"
-            className="px-3 py-1 rounded-md border text-sm hover:bg-gray-100"
+            className="px-4 py-2 rounded-md border border-gray-300 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
           >
             Login
           </Link>
           <Link
             href="/sign-up"
-            className="px-3 py-1 rounded-md bg-blue-600 text-white text-sm hover:bg-blue-700"
+            className="px-4 py-2 rounded-md bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 shadow-sm transition-colors"
           >
             Sign Up
           </Link>

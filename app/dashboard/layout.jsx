@@ -33,7 +33,7 @@ function DashboardLayout({ children }) {
   }
 
   return (
-    <div>
+    <div className="min-h-screen bg-slate-50">
       <Header />
       <div className='mx-5 md:mx-20 lg:mx-36' >
         {children}
@@ -44,3 +44,5 @@ function DashboardLayout({ children }) {
 }
 
 export default DashboardLayout
+
+
