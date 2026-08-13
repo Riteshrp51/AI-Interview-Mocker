@@ -40,3 +40,14 @@ export async function getQuestionsCollection() {
   const db = await getDb();
   return db.collection("questions");
 }
+
+export async function getResumesCollection() {
+  const db = await getDb();
+  return db.collection("resumes");
+}
+
+export async function getMatchesCollection() {
+  const db = await getDb();
+  return db.collection("resume_matches");
+}
+

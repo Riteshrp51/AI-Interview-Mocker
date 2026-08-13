@@ -32,21 +32,21 @@ export default function Page() {
   return (
     <section className="bg-white">
       <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
-        <section className="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6">
-          <img
-            alt=""
-            src="https://media.licdn.com/dms/image/v2/D5612AQG_loWp-CWxUg/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1718688017082?e=2147483647&v=beta&t=gUDAHjL5YCvfgGmhtYqaad_67tQjTjRoJii5YTSZ5c8"
-            className="absolute inset-0 h-full w-full object-cover opacity-80"
-          />
-
-          <div className="hidden lg:relative lg:block lg:p-12">
-            <h2 className="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
-              Welcome to AI Interview Mocker 🦑
+        <section className="relative hidden lg:flex flex-col items-center justify-center bg-zinc-50 dark:bg-zinc-950 lg:col-span-5 lg:h-full xl:col-span-6 p-12 border-r border-zinc-200 dark:border-zinc-800">
+          <div className="max-w-md text-center space-y-6">
+            <h2 className="text-3xl font-extrabold text-zinc-900 dark:text-zinc-50 tracking-tight">
+              Welcome to AI Interview Mocker 👾
             </h2>
-
-            <p className="mt-4 leading-relaxed text-white/90">
-              Every expert was once a beginner—start practicing today.
+            <p className="text-sm text-zinc-500 dark:text-zinc-400">
+              Every expert was once a beginner—start preparing today with AI-powered mock interviews.
             </p>
+            <div className="relative w-full aspect-square max-w-sm mx-auto overflow-hidden rounded-2xl shadow-sm border border-zinc-200 dark:border-zinc-805 bg-white">
+              <img
+                alt="AI Interview Preparation"
+                src="/interview-illustrate.png"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </section>
 
