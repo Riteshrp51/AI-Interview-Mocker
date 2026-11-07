@@ -157,13 +157,15 @@ function AddNewInterview({ openDialog: controlledOpenDialog, setOpenDialog: cont
     <div>
       {!hideCard && (
         <div
-          className="p-10 border-2 border-dashed border-gray-300 rounded-xl bg-gray-50 hover:bg-gray-100 hover:border-blue-500 hover:shadow-lg cursor-pointer transition-all duration-300 flex flex-col items-center justify-center gap-2 group"
+          className="p-8 sm:p-10 border-2 border-dashed border-gray-300 dark:border-zinc-700 rounded-xl bg-gray-50 dark:bg-zinc-900/60 hover:bg-gray-100 dark:hover:bg-zinc-800/60 hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-lg cursor-pointer transition-all duration-300 flex flex-col items-center justify-center gap-3 group"
           onClick={() => setOpenDialog(true)}
         >
-          <div className="bg-white p-3 rounded-full shadow-sm group-hover:scale-110 transition-transform duration-300">
-            <Plus className="w-8 h-8 text-blue-600" />
+          <div className="bg-white dark:bg-zinc-800 p-3 rounded-full shadow-sm group-hover:scale-110 transition-transform duration-300">
+            <Plus className="w-8 h-8 text-blue-600 dark:text-blue-400" />
           </div>
-          <h2 className="text-lg font-semibold text-gray-700 group-hover:text-blue-600 transition-colors">Add New Interview</h2>
+          <h2 className="text-lg font-semibold text-gray-700 dark:text-zinc-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+            Add New Interview
+          </h2>
         </div>
       )}
 

@@ -5,31 +5,13 @@ import { usePathname } from 'next/navigation';
 import {
     Home,
     Mic,
-    FileText,
-    GitCompare,
-    Code2,
-    BarChart3,
-    Map,
-    History,
-    Trophy,
-    Bell,
-    Settings,
     X,
     Sparkles
 } from 'lucide-react';
 
 export const sidebarItems = [
     { name: 'Dashboard', icon: Home, href: '/dashboard' },
-    { name: 'Mock Interviews', icon: Mic, href: '/dashboard' }, // Links to dashboard to keep previous interview flow functional
-    { name: 'Resume Analyzer', icon: FileText, href: '/dashboard/resume-analyzer' },
-    { name: 'Resume vs Job Description', icon: GitCompare, href: '/dashboard/resume-vs-jd' },
-    { name: 'Coding Interviews', icon: Code2, href: '/dashboard/coding-interviews' },
-    { name: 'Analytics', icon: BarChart3, href: '/dashboard/analytics' },
-    { name: 'Learning Roadmap', icon: Map, href: '/dashboard/learning-roadmap' },
-    { name: 'Interview History', icon: History, href: '/dashboard/history' },
-    { name: 'Achievements', icon: Trophy, href: '/dashboard/achievements' },
-    { name: 'Notifications', icon: Bell, href: '/dashboard/notifications' },
-    { name: 'Settings', icon: Settings, href: '/dashboard/settings' },
+    { name: 'Mock Interviews', icon: Mic, href: '/dashboard/mock-interviews' },
 ];
 
 export default function Sidebar({ isOpen, toggleCollapse, isCollapsed, onClose }) {
@@ -57,7 +39,7 @@ export default function Sidebar({ isOpen, toggleCollapse, isCollapsed, onClose }
                             <Sparkles className="w-5 h-5" />
                         </div>
                         {!isCollapsed && (
-                            <span className="font-extrabold text-lg text-zinc-900 dark:text-light tracking-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                            <span className="font-extrabold text-lg text-zinc-900 dark:text-zinc-50 tracking-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                                 PrepAI
                             </span>
                         )}
@@ -74,7 +56,10 @@ export default function Sidebar({ isOpen, toggleCollapse, isCollapsed, onClose }
                 {/* Navigation Items */}
                 <nav className="flex-1 overflow-y-auto space-y-1.5 p-3">
                     {sidebarItems.map((item, index) => {
-                        const isActive = pathname === item.href;
+                        const isActive =
+                            pathname === item.href ||
+                            (item.href === '/dashboard/mock-interviews' && pathname === '/dashboard/questions');
+
                         return (
                             <Link
                                 key={index}
